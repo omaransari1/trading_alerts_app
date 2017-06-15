@@ -5,6 +5,8 @@
         <tr>
           <td>Symbol</td>
           <td>Value</td>
+          <td>50 day Moving Avg</td>
+          <td>52 week high</td>
         </tr>
       </thead>
       <tbody>
@@ -12,6 +14,8 @@
         <tr>
           <td><%= stock.symbol %> </td>
           <td><%= stock.ask %></td>
+          <td><%= stock.moving_average_50_day %></td>
+          <td><%= stock.high_52_weeks %></td>
         </tr>
       <%end%>
       <tbody>
