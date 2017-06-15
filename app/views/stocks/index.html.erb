@@ -1,17 +1,19 @@
 <h1>Listings</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <td>Symbol</td>
-        <td>Value</td>
-      </tr>
-    </thead>
-    <tbody>
-    <% @data.each do |stock| %>
-      <tr>
-        <td><%= stock.symbol %> </td>
-        <td><%= stock.ask %></td>
-      </tr>
-    <%end%>
-    <tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Symbol</td>
+          <td>Value</td>
+        </tr>
+      </thead>
+      <tbody>
+      <% @data.each do |stock| %>
+        <tr>
+          <td><%= stock.symbol %> </td>
+          <td><%= stock.ask %></td>
+        </tr>
+      <%end%>
+      <tbody>
+    </table>
+  </div>
