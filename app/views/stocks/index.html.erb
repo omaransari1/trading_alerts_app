@@ -1,1 +1,4 @@
 <h1>Listings</h1>
+<% @data.each do |stock| %>
+  <p><%= stock.symbol + " value is: " + stock.ask %></p>
+<%end%>
