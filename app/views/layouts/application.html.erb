@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
                     <% if user_signed_in? %>
-                     <li class="nav-item" style="color:white">Hi <%=current_user.email %></li>
+                     <li class="navbar-text" style="color:white">Hi <%=current_user.email %></li>
                       <li class="nav-item">
                         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
                       </li>
@@ -34,7 +34,7 @@
                 </ul>
                 <% if user_signed_in? %>
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     User menu
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -52,6 +52,7 @@
     <p class="alert"><%= alert %></p>
     <div class="container">
     <%= yield %>
+    </div>
       <!-- Footer -->
     <footer class="py-5 bg-inverse">
         <div class="container">
@@ -59,8 +60,6 @@
         </div>
         <!-- /.container -->
     </footer>
-
-    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
