@@ -5,4 +5,8 @@ class StocksController < ApplicationController
       :high_52_weeks])
     render 'index.html.erb'
   end
+
+  def new
+    render 'new.html.erb'
+  end
 end

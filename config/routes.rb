@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/stocks' => 'stocks#index'
+  get '/stocks/new' => 'stocks#new'
 end
