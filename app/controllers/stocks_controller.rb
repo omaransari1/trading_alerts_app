@@ -9,4 +9,12 @@ class StocksController < ApplicationController
   def new
     render 'new.html.erb'
   end
+
+  def create
+
+    @my_symbol = params[:my_symbol]
+    @yahoo_client = YahooFinance::Client.new
+    @data = @yahoo_client.quotes(['#{@my_symbol}'], [:last_trade_price,:moving_average_50_day,
+      :high_52_weeks])
+  end
 end

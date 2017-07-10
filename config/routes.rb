@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   get '/stocks' => 'stocks#index'
   get '/stocks/new' => 'stocks#new'
+  post '/watchlist' => 'stocks#create'
 end
