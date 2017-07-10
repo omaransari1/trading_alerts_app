@@ -1,10 +1,10 @@
 
 <h3>Enter a stock symbol to view</h3>
 
-  <form class="form-inline" action="/watchlist" method="post">
+  <form class="form-inline" action="/stocks/watchlist_item" method="get">
     <div class="form-group">
-      <label for="stocksymbol" style="margin-right:3px">Symbol</label>
-      <input type="text" class="form-control" name="stocksymbol" placeholder="AAPL">
+      <label for="my_symbol" style="margin-right:3px">Symbol</label>
+      <input type="text" class="form-control" name="my_symbol" placeholder="AAPL">
     </div>
     <button type="submit" class="btn btn-primary">View</button>
   </form>

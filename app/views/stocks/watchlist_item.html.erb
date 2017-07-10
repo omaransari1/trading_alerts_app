@@ -1,0 +1,23 @@
+<h1>Listings</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Symbol</td>
+          <td>Value</td>
+          <td>50 day Moving Avg</td>
+          <td>52 week high</td>
+        </tr>
+      </thead>
+      <tbody>
+      <% @data.each do |stock| %>
+        <tr>
+          <td><%= stock.symbol %> </td>
+          <td><%= stock.last_trade_price %></td>
+          <td><%= stock.moving_average_50_day %></td>
+          <td><%= stock.high_52_weeks %></td>
+        </tr>
+      <%end%>
+      <tbody>
+    </table>
+  </div>
