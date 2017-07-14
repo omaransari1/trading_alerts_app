@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,7 +11,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery
+//= require bootstrap-sprockets
 //= require_tree .
+
+// Workaround to make dropdown menu work on navbar, hovering over
+// $(document).ready(function(){
+//     $('.navbar .dropdown').hover(function() {
+//         $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+//     }, function() {
+//         $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+//     });
+// })
+
+
