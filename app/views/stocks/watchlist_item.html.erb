@@ -14,9 +14,9 @@
       <% @data.each do |stock| %>
         <tr>
           <td><%= stock.symbol %> </td>
-          <td><%= stock.last_trade_price %></td>
-          <td><%= stock.moving_average_50_day %></td>
-          <td><%= stock.high_52_weeks %></td>
+          <td>$<%= stock.last_trade_price %></td>
+          <td>$<%= stock.moving_average_50_day %></td>
+          <td>$<%= stock.high_52_weeks %></td>
           <td>"Watchlist button"</td>
         </tr>
       <%end%>
