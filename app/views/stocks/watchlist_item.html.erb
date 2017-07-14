@@ -17,7 +17,10 @@
           <td>$<%= stock.last_trade_price %></td>
           <td>$<%= stock.moving_average_50_day %></td>
           <td>$<%= stock.high_52_weeks %></td>
-          <td>"Watchlist button"</td>
+          <td><form method="post" action="/stocks">
+                  <input type="hidden" name=<%=stock.symbol%> />
+                  <button type="submit" class="btn btn-primary">Add</button>
+             </form></td>
         </tr>
       <%end%>
       <tbody>
