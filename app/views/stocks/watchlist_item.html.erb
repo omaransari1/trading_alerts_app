@@ -18,8 +18,8 @@
           <td>$<%= stock.moving_average_50_day %></td>
           <td>$<%= stock.high_52_weeks %></td>
           <td><form method="post" action="/stocks">
-                  <input type="hidden" name=<%=stock.symbol%> />
-                  <button type="submit" class="btn btn-primary">Add</button>
+                <input type="hidden" name="stocktoadd" value=<%=stock.symbol%>>
+                  <button type="submit" class="btn btn-primary" >Add</button>
              </form></td>
         </tr>
       <%end%>
