@@ -11,6 +11,10 @@ class StocksController < ApplicationController
   end
 
   def create
+    @stock = Stock.create(
+        symbol: params[],
+        user_id: current_user.id
+      )
 
   end
 
