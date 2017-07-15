@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post '/stocks' => 'stocks#create'
   get '/stocks/new' => 'stocks#new'
   get '/stocks/watchlist_item' => 'stocks#watchlist_item'
+  get '/delete' => 'stocks#destroy'
 end
