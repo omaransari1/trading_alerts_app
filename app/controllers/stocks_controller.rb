@@ -2,11 +2,15 @@ class StocksController < ApplicationController
   def index
 
     @user_stocks = Stock.where(user_id: current_user)
-    @user_stock_symbols = @user_stocks
+    @user_stock_symbols = []
+    @user_stocks.each do |stock|
+      @user_stock_symbols << stock.symbol
+    end
+    
     @yahoo_client = YahooFinance::Client.new
-    @data = @yahoo_client.quotes(['PCLN', 'AMZN','AAPL'], [:last_trade_price, :moving_average_50_day,
+    @data = @yahoo_client.quotes(@user_stock_symbols, [:last_trade_price, :moving_average_50_day,
       :high_52_weeks])
-    render 'index.html.erb'
+    render 'watchlist.html.erb'
   end
 
   def new
@@ -14,10 +18,16 @@ class StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.create(
+    @stock = Stock.new(
         symbol: params[:stocktoadd],
         user_id: current_user.id
       )
+
+    if @stock.save
+      redirect_to action: 'index'
+    else
+      render 'new.html.erb'
+    end
 
   end
 
