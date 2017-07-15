@@ -47,9 +47,12 @@
             </div>
         </div>
     </nav>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <% if !flash[:notice].blank? %>
+      <%=flash[:notice]%>
+    <%end%>
+   
     <div class="container">
     <%= yield %>
     </div>

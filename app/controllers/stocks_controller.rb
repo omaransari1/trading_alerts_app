@@ -24,6 +24,7 @@ class StocksController < ApplicationController
       )
 
     if @stock.save
+      flash[:notice] = "#{@stock.symbol} added to watchlist successfully"
       redirect_to action: 'index'
     else
       render 'new.html.erb'
@@ -46,6 +47,8 @@ class StocksController < ApplicationController
     stocks_to_delete.each do |stock|
       stock.destroy
     end
+
+    flash[:notice] = "#{params[:stocktodelete]} removed from watchlist"
 
     redirect_to action: 'index'
   end
