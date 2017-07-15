@@ -24,7 +24,7 @@ class StocksController < ApplicationController
       )
 
     if @stock.save
-      flash[:notice] = "#{@stock.symbol} added to watchlist successfully"
+      flash[:success] = "#{@stock.symbol} added to watchlist successfully"
       redirect_to action: 'index'
     else
       render 'new.html.erb'

@@ -49,9 +49,13 @@
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if !flash[:notice].blank? %>
-      <%=flash[:notice]%>
-    <%end%>
+    <div class="container">
+      <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+            <%= value %>
+      </div>
+      <%end%>
+    </div>
    
     <div class="container">
     <%= yield %>
