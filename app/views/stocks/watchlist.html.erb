@@ -17,7 +17,7 @@
           <td>$<%= stock.last_trade_price %></td>
           <td>$<%= stock.moving_average_50_day %></td>
           <td>$<%= stock.high_52_weeks %></td>
-          <td><form action="/delete" method="delete">
+          <td><form action="/delete" method="delete" onsubmit="return confirm('Are you sure you want to delete this stock')">
                 <input type="hidden" name="stocktodelete" value=<%=stock.symbol%>>
                 <button type="submit" class="btn btn-danger" >Remove</button>
              </form></td>
