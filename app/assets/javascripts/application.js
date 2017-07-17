@@ -11,8 +11,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-sprockets
 //= require jquery
+//= require jquery-ujs
+//= require bootstrap
 //= require_tree .
 
 //Workaround to make dropdown menu work on navbar, hovering over
