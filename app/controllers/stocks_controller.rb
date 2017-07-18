@@ -43,6 +43,11 @@ class StocksController < ApplicationController
   end
 
   def stockprofile
+    @symbol = params[:symbol]
+    @yahoo_client = YahooFinance::Client.new
+    @data = @yahoo_client.quotes(["#{@symbol}"], [:last_trade_price, :market_capitalization, :moving_average_50_day,
+      :high_52_weeks, :low_52_weeks])
+
     render 'stockprofile.html.erb'
   end
 

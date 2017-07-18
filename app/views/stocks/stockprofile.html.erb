@@ -1,0 +1,41 @@
+<h1><%=@symbol%> profile</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead style="font-weight:bold">
+        <tr>
+          <td>Symbol</td>
+          <td><%= @data[0].symbol%></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Market Cap </td>
+          <td>$<%= @data[0].market_capitalization %></td>      
+        </tr>
+        <tr>
+          <td>Last Trade Price </td>
+          <td>$<%= @data[0].last_trade_price %></td>      
+        </tr>
+        <tr>
+          <td>52 week high </td>
+          <td>$<%= @data[0].high_52_weeks %></td>     
+        </tr>
+        <tr>
+          <td>52 week low </td>
+          <td>$<%= @data[0].low_52_weeks %></td>      
+        </tr>
+        <tr>
+          <td>50 day moving avg</td>
+          <td>$<%= @data[0].moving_average_50_day %></td>       
+        </tr>
+      <tbody>
+    </table>
+    <br>
+    <iframe src="http://www.marketwatch.com/investing/stock/<%=@symbol%>" height="400" width="100%"></iframe> 
+    <br>
+    <%= link_to 'Back to watchlist', '/stocks' %>
+    <br>
+    <%= link_to 'Add another stock to watchlist', '/stocks/new' %>
+    <br>
+    <%= link_to 'Home', root_path %>
+  </div>
