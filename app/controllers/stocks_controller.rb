@@ -42,6 +42,10 @@ class StocksController < ApplicationController
     render '/stocks/watchlist_item.html.erb'
   end
 
+  def stockprofile
+    render 'stockprofile.html.erb'
+  end
+
   def destroy
     stocks_to_delete = Stock.where(symbol: params[:stocktodelete], user_id: current_user.id)
     stocks_to_delete.each do |stock|
