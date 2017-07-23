@@ -15,7 +15,11 @@ class StocksController < ApplicationController
 
   # gives list of symbols based on popularity among users
   def popular_stocks
-    @stocks = Stock.all
+    @stocks = Stock.pluck(:symbol)
+    @counts = Hash.new 0
+    @stocks.each do |stock|
+      @counts[stock] += 1
+    end
     render "popular_stocks"
   end
 

@@ -8,10 +8,10 @@
         </tr>
       </thead>
       <tbody>
-      <% @stocks.each do |stock| %>
+      <% @counts.each do |k, v| %>
         <tr>
-          <td><%=link_to "#{stock.symbol}", "/stocks/stockprofile/#{stock.symbol}" %> </td>
-          <td>$<%= "Stock count" %></td>
+          <td><%=link_to "#{k}", "/stocks/stockprofile/#{k}" %> </td>
+          <td><%= v %></td>
         </tr>
       <%end%>
       <tbody>
