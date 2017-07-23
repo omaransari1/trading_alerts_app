@@ -25,7 +25,7 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(
-        symbol: params[:stocktoadd],
+        symbol: params[:stocktoadd].upcase,
         user_id: current_user.id
       )
 
