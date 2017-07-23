@@ -8,14 +8,15 @@
         </tr>
       </thead>
       <tbody>
-      <% @counts.each do |k, v| %>
+      <% @sorted_counts.each do |stock| %>
         <tr>
-          <td><%=link_to "#{k}", "/stocks/stockprofile/#{k}" %> </td>
-          <td><%= v %></td>
+          <td><%=link_to "#{stock[0]}", "/stocks/stockprofile/#{stock[0]}" %> </td>
+          <td><%= stock[1] %></td>
         </tr>
       <%end%>
       <tbody>
     </table>
+    <%= link_to 'Back to watchlist', '/stocks' %>
     <br>
     <%= link_to 'Home', root_path %>
   </div>

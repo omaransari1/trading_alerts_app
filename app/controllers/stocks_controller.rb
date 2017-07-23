@@ -16,10 +16,13 @@ class StocksController < ApplicationController
   # gives list of symbols based on popularity among users
   def popular_stocks
     @stocks = Stock.pluck(:symbol)
-    @counts = Hash.new 0
+    # stock_counts is setting a new hash ready to accept new keys with default value 0
+    @stock_counts = Hash.new 0
     @stocks.each do |stock|
-      @counts[stock] += 1
+      @stock_counts[stock] += 1
     end
+    # @sorted_counts is a 2d array, each element of outer array has 2 elements pos 0 & 1
+    @sorted_counts = @stock_counts.sort{|a,b| b[1] <=> a[1]}
     render "popular_stocks"
   end
 
