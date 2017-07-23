@@ -13,6 +13,12 @@ class StocksController < ApplicationController
     render 'watchlist.html.erb'
   end
 
+  # gives list of symbols based on popularity among users
+  def popular_stocks
+    @stocks = Stock.all
+    render "popular_stocks"
+  end
+
   def new
     render 'new.html.erb'
   end

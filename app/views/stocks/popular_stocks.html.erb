@@ -1,0 +1,21 @@
+<h1>Top Stocks to Watch</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead style="font-weight:bold">
+        <tr>
+          <td>Symbol</td>
+          <td>Watchers</td>
+        </tr>
+      </thead>
+      <tbody>
+      <% @stocks.each do |stock| %>
+        <tr>
+          <td><%=link_to "#{stock.symbol}", "/stocks/stockprofile/#{stock.symbol}" %> </td>
+          <td>$<%= "Stock count" %></td>
+        </tr>
+      <%end%>
+      <tbody>
+    </table>
+    <br>
+    <%= link_to 'Home', root_path %>
+  </div>
