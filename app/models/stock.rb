@@ -1,5 +1,5 @@
 class Stock < ApplicationRecord
   belongs_to :user
 
-  validates :symbol, presence: true
+  validates :symbol, presence: true, uniqueness: true
 end
