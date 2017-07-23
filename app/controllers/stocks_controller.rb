@@ -33,9 +33,9 @@ class StocksController < ApplicationController
       flash[:success] = "#{@stock.symbol} added to watchlist successfully"
       redirect_to action: 'index'
     else
+      flash[:error] = "#{@stock.errors.messages[:symbol][0]}"
       render 'new.html.erb'
     end
-
   end
 
   def watchlist_item
