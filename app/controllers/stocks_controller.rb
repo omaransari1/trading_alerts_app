@@ -15,6 +15,7 @@ class StocksController < ApplicationController
 
   # gives list of symbols based on popularity among users
   def popular_stocks
+    #pluck to pull a column of values from a table
     @stocks = Stock.pluck(:symbol)
     # stock_counts is setting a new hash ready to accept new keys with default value 0
     @stock_counts = Hash.new 0
