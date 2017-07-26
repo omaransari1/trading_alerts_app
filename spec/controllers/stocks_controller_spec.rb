@@ -9,8 +9,11 @@ RSpec.describe StocksController do
     # end
 
     it "renders the index template" do
+      user = double('user', :id => 1)
+      allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+      allow(controller).to receive(:current_user).and_return(user)
       get :index
-      expect(response).to render_template("index")
+      expect(response).to render_template('watchlist.html.erb')
     end
   end
 end
