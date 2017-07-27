@@ -15,5 +15,14 @@ RSpec.describe StocksController do
       get :index
       expect(response).to render_template('watchlist.html.erb')
     end
+
+    it "returns an HTTP status code 200" do
+      user = double('user', :id => 1)
+      allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+      allow(controller).to receive(:current_user).and_return(user)
+      get :index
+      expect(response).to have_http_status(200)
+
+    end
   end
 end
